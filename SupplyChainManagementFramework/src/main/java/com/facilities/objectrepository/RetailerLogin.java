@@ -25,6 +25,13 @@ public class RetailerLogin
 	private WebElement logintypedropdown;
 	@FindBy(xpath="//input[@value='Login']")
 	private WebElement Loginbtn;
+	@FindBy(linkText="Retailers")
+	private WebElement Retailerspage;
+	
+	
+	public WebElement getRetailerspage() {
+		return Retailerspage;
+	}
 	public WebElement getUsername() {
 		return usernamefield;
 	}

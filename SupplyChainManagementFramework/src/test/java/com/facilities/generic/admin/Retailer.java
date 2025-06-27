@@ -63,8 +63,9 @@ public class Retailer extends BaseClass
 		NewOrder no=new NewOrder(driver);
 		no.getNewOrderlink().click();
 		
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		//JavascriptExecutor js=(JavascriptExecutor)driver;
+		//js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		wlib.scrollPageToDown(driver);
 		wlib.pageToLoad(driver);
 	
 		

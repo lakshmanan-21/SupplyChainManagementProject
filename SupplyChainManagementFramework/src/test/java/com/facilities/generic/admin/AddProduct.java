@@ -1,9 +1,11 @@
 package com.facilities.generic.admin;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.facilities.generic.fileutility.ExcelUtility;
@@ -23,6 +25,7 @@ import com.facilities.objectrepository.ManageStock;
 import com.facilities.objectrepository.ManageUnit;
 import com.facilities.objectrepository.Manufacturer;
 import com.facilities.objectrepository.Manufacturerlogin;
+import com.facilities.objectrepository.RetailerLogin;
 
 import om.facilities.basetest.BaseClass;
 
@@ -79,7 +82,12 @@ public class AddProduct extends BaseClass
 		{
 			
 		}
+		ap.getProductspage().click();
+		wlib.scrollPageToDown(driver);
 		
+	String pname=	driver.findElement(By.xpath("//td[text()=' "+productname+" ']/../td[3]")).getText();
+System.out.println(pname);
+		Assert.assertEquals(productname,pname);
 		
 		
 		AddRetailer ar=new AddRetailer(driver);
@@ -99,6 +107,12 @@ public class AddProduct extends BaseClass
 		{
 			
 		}
+		RetailerLogin r=new RetailerLogin(driver);
+		r.getRetailerspage().click();
+		wlib.scrollPageToDown(driver);
+
+		String rname=driver.findElement(By.xpath("//td[text()=' "+Retailername+" ']/../td[3]")).getText();
+		Assert.assertEquals(Retailername,rname);
 		
 		
 		AddManufacturer am=new AddManufacturer(driver);
@@ -119,6 +133,13 @@ public class AddProduct extends BaseClass
 			
 			
 		}
+		Manufacturerlogin  ml=new Manufacturerlogin (driver);
+		ml.getManufacturerspage()
+		.click();
+		wlib.scrollPageToDown(driver);
+
+		String mname=driver.findElement(By.xpath("//td[text()=' "+Manufacturername+" ']/../td[3]")).getText();
+		Assert.assertEquals(Manufacturername,mname);
 		
 		
 		AddDistributor ad=new AddDistributor(driver);
@@ -137,6 +158,13 @@ public class AddProduct extends BaseClass
 		{
 			
 		}
+		AddDistributor adp=new AddDistributor(driver);
+		adp.getDistributorspage().click();
+		wlib.scrollPageToDown(driver);
+
+		String dname=driver.findElement(By.xpath("//td[text()=' "+Distributorname+" ']/../td[3]")).getText();
+		Assert.assertEquals(Distributorname,dname);
+		
 		ManageArea ma=new ManageArea(driver);
 		ma.getLogout();
 		
@@ -168,7 +196,11 @@ public class AddProduct extends BaseClass
 		{
 			
 		}
-		
+		/*m.getManageUnitlink().click();
+		driver.manage().window().maximize();
+		wlib.scrollPageToDown(driver);
+		String unitname=driver.findElement(By.xpath("//td[text()='"+unit+"']/../td[3]")).getText();
+		Assert.assertEquals(unit,unitname);*/
 		
 		String category=elib.getDataFromExcel("Sheet5", 1, 2);
 		String categorydes=elib.getDataFromExcel("Sheet5", 1, 3);
@@ -187,7 +219,12 @@ public class AddProduct extends BaseClass
 		{
 			
 		}
-		
+		/*mc.getManageCategorylink().click();
+		wlib.scrollPageToDown(driver);
+		String categoryname=driver.findElement(By.xpath("//td[text()=' "+category+" ']/../td[3]")).getText();
+		System.out.println(categoryname);
+		Assert.assertEquals(category,categoryname);*/
+
 		String area=elib.getDataFromExcel("Sheet5", 1, 4);
 		String areades=elib.getDataFromExcel("Sheet5", 1, 5);
 		ManageArea ma=new ManageArea(driver);
@@ -207,6 +244,11 @@ public class AddProduct extends BaseClass
 		{
 			
 		}
+		/*ma.getManageArealink().click();
+		wlib.scrollPageToDown(driver);
+		String areaname=driver.findElement(By.xpath("//td[text()=' "+area+" ']/../td[3]")).getText();
+		Assert.assertEquals(area,areaname);*/
+
 		ma.getLogout().click();
 		
 	}

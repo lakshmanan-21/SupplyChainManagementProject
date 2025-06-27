@@ -13,6 +13,7 @@ public class AddDistributor
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
+	
 	@FindBy(linkText="Add Distributor")
 	private WebElement addDistributorlink;
 	@FindBy(id="distributor:name")
@@ -25,6 +26,13 @@ public class AddDistributor
 	private WebElement distributoraddress;
 	@FindBy(xpath="//input[@value='Add Distributor']")
 	private WebElement adddistributor;
+	
+	@FindBy(linkText="Distributors")
+	private WebElement Distributorspage;
+	
+	public WebElement getDistributorspage() {
+		return Distributorspage;
+	}
 	public WebElement getAddDistributorlink() {
 		return addDistributorlink;
 	}

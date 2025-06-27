@@ -20,10 +20,15 @@ public class Manufacturerlogin
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
+	@FindBy(linkText="Manufacturers")
+	private WebElement Manufacturerspage;
 	@FindBy(linkText="Add Products")
 	private WebElement addprolink;
 	@FindBy(id="product:name")
 	private WebElement pname;
+	public WebElement getManufacturerspage() {
+		return Manufacturerspage;
+	}
 	@FindBy(id="product:price")
 	private WebElement pprice;
 	@FindBy(id="product:unit")

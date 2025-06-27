@@ -44,8 +44,9 @@ public class Delete extends BaseClass
 		}
 		Deletesupply ds=new Deletesupply(driver);
 		ds.getProductslnk().click();
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		//JavascriptExecutor js=(JavascriptExecutor)driver;
+		//js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		wlib.scrollPageToDown(driver);
 		wlib.pageToLoad(driver);
 		
 		driver.findElement(By.xpath("//td[text()=' "+productname+" ']/../td[1]")).click();

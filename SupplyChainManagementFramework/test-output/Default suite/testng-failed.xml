@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.facilities.generic.admin.Delete">
+      <class name="com.facilities.generic.admin.AddProduct">
         <methods>
-          <include name="deleteclass"/>
-          <include name="configAC"/>
           <include name="configAS"/>
-          <include name="configBC"/>
+          <include name="configAC"/>
           <include name="configBS"/>
+          <include name="configBC"/>
           <include name="configAM"/>
           <include name="configBM"/>
+          <include name="manageDetails"/>
         </methods>
-      </class> <!-- com.facilities.generic.admin.Delete -->
+      </class> <!-- com.facilities.generic.admin.AddProduct -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -4,30 +4,20 @@
   <listeners>
     <listener class-name="com.facilities.generic.listenerutility.ListImp"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Test1(failed)">
     <classes>
       <class name="com.facilities.generic.admin.AddProduct">
         <methods>
-          <include name="configAC"/>
           <include name="configAS"/>
-          <include name="configBC"/>
+          <include name="configAC"/>
           <include name="configBS"/>
+          <include name="configBC"/>
+          <include name="manufacturerlogin"/>
           <include name="configAM"/>
           <include name="configBM"/>
           <include name="manageDetails"/>
         </methods>
       </class> <!-- com.facilities.generic.admin.AddProduct -->
-      <class name="com.facilities.generic.admin.Retailer">
-        <methods>
-          <include name="profile"/>
-          <include name="configAC"/>
-          <include name="configAS"/>
-          <include name="configBC"/>
-          <include name="configBS"/>
-          <include name="configAM"/>
-          <include name="configBM"/>
-        </methods>
-      </class> <!-- com.facilities.generic.admin.Retailer -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

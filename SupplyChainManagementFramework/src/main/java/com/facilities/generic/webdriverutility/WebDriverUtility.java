@@ -3,6 +3,7 @@ package com.facilities.generic.webdriverutility;
 import java.time.Duration;
 import java.util.Set;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -95,5 +96,10 @@ public class WebDriverUtility
   	{
   		driver.switchTo().alert().dismiss();
   	}
+   public void scrollPageToDown(WebDriver driver)
+   {
+	   JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+   }
    
 }
